@@ -10,7 +10,6 @@ design:
   css_style: null
   css_class: null
 ---
-
 <br>
 
-The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+The **Institute of Medical Genomics (IMG)** of Shandong first Medical University, focusing on rare genetic diseases and major cardiovascular and nervous system diseases, explored the molecular pathological mechanism and accurate diagnosis and treatment of diseases by means of genetics, genomics, proteomics, 3D genomics, iPS differentiation and organ-like model, disease animal model, protein cryoelectron microscope structural biology, gene editing and gene therapy.
