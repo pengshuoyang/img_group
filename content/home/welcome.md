@@ -9,6 +9,8 @@ design:
   columns: "1"
   css_style: null
   css_class: null
+  background:
+    image: 所简介.png
 ---
 <br>
 
