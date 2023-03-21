@@ -1,5 +1,6 @@
 ---
 title: Qing Wang
+role: Leader of IMG
 avatar_filename: qingwang.png
 social: []
 organizations: []
