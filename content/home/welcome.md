@@ -4,7 +4,7 @@ widget_id: "10"
 headless: true
 weight: 10
 title: Institute of Medical Genomics
-hero_media: welcome.jpg
+hero_media: 所简介.png
 design:
   columns: "1"
   css_style: null
