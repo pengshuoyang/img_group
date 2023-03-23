@@ -1,71 +1,11 @@
 ---
-# Display name
-title: "Pengshuo Yang"
-
-# Username (this should match the folder name and the name on publications)
-authors:
-- "Pengshuo Yang"
-
-# Is this the primary user of the site?
-superuser: true
-
-# Role/position (e.g., Professor of Artificial Intelligence)
-role: Associate professor of metagenome data mining
-
-# Organizations/Affiliations
-#organizations: Shandong First Medical University
-#- name: Shandong First Medical University 
-#  url: "https://bms.sdfmu.edu.cn/index.htm"
-
-# Short bio (displayed in user profile at end of posts)
-bio: 
-
-# List each interest with a dash
-interests:
-- Metagenome data mining
-- Protein 3D structure prediction 
-
-#education:
-  courses:
-  - course: Title course 1
-    institution: Name of Institution
-    year: 2012
-  - course: Title course 1
-    institution: Name of Institution
-    year: 2012
-
-# Social/Academic Networking
-# For available icons, see: https://wowchemy.com/docs/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
-social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/USERNAME
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.com/citations?user=PERSON-ID
-- icon: github
-  icon_pack: fab
-  link: https://github.com/USERNAME
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
-
-# Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "yangpengshuo@sdfmu.edu.cn"
-
-# Highlight the author in author lists? (true/false)
-highlight_name: yes
-
-# Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
+title: Pengshuo Yang
+role: Associate professor of IMG
+avatar_filename: avatar.png
+social: []
+organizations: []
+superuser: false
 user_groups:
-- Researchers
-- Administration
+  - Researchers
 ---
+The main research interests are biological big data mining and method development in microbiology research. The research focuses on the biological big data processing in the field of environment and health, including the biological information analysis and processing of sequencing data, the development of interaction network algorithm in microbial community, and the use of microbiome big data to predict unknown structural proteins. As the first author, he published 4 SCI papers (Genome Biology:14 score and PNAS:11 score), one chapter of a foreign language publication book (first author), and 9 non-single SCI papers. Participate in five National Nature Foundation projects (one of which is the second adult) and seven invention patents.

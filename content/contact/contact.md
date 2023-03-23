@@ -18,16 +18,16 @@ content:
   email: test@example.org
   phone: 888 888 88 88
   address:
-    street: 450 Serra Mall
-    city: Stanford
-    region: CA
-    postcode: '94305'
-    country: United States
-    country_code: US
+    street: 6699 qingdao road
+    city: Jinan
+    region: Shandong
+    postcode: '271105'
+    country: China
+    country_code: CHN
   coordinates:
-    latitude: '37.4275'
-    longitude: '-122.1697'
-  directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+    latitude: '36.68'
+    longitude: '116.88'
+  directions: The main gate of the school is the south gate.
   office_hours:
     - 'Monday 10:00 to 13:00'
     - 'Wednesday 09:00 to 10:00'
