@@ -4,10 +4,8 @@ on:
   push:
     branches:
     - master
-    paths:
-    - '**.md'
-  schedule:
-    - cron:  '0 8 * * *'
+    
+ workflow_dispatch:
 
 jobs:
   Deploy:
