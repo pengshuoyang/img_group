@@ -11,7 +11,7 @@ on:
 
 jobs:
   Deploy:
-    runs-on: ubuntu-latest
+    runs-on: Linux
     steps:
 
     - uses: actions/checkout@v1
