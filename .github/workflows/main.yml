@@ -11,7 +11,7 @@ on:
 
 jobs:
   Deploy:
-    runs-on: Linux
+    runs-on: Linux RedHat AS5
     steps:
 
     - uses: actions/checkout@v1
@@ -21,7 +21,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.62.0'
+        hugo-version: '1.20.1'
 
     - name: Build
       run: hugo -D
