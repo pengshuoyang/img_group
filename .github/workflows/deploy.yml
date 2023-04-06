@@ -25,37 +25,56 @@ on:
   
   # 支持手动运行
   workflow_dispatch:
-    
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
 jobs:
-  # job名称为deploy
-  deploy:
-    # 使用GitHub提供的runner
-    runs-on: ubuntu-20.04
-
+  # build job for hugo
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.108.0
     steps:
-      # 检出代码，包括submodules，保证主题文件正常
-      - name: Checkout source
-        uses: actions/checkout@v2
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          ref: main
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      
-      # 准备Hugo环境
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+          submodules: recursive
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          hugo-version: 'latest'
-          # extended: true
+          path: ./public
 
-      # Hugo构建静态站点，默认输出到public目录下    
-      - name: Build
-        run: hugo --gc --verbose --minify
-
-      # 将public目录下的所有内容同步到远程服务器的nginx站点路径，注意path参数的写法，'public'和'public/'是不同的
-      - name: Deploy
+  # deploy job for rsync
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: rsync deploy
         uses: burnett01/rsync-deployments@5.1
-        with:
+        with: 
           switches: -avzr --delete
           path: ./public/
           remote_host: imedicalgenomics.com
