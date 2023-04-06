@@ -33,7 +33,7 @@ defaults:
 
 jobs:
   # build job for hugo
-  build and deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
