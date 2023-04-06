@@ -10,7 +10,7 @@ on:
       - '.gitignore'
       - '.gitmodules'
       - 'README.md'
-    branches: [ master ]
+    branches: [ main ]
 
   # pull_request事件
   pull_request:
@@ -21,7 +21,7 @@ on:
       - '.gitignore'
       - '.gitmodules'
       - 'README.md'
-    branches: [ master ]
+    branches: [ main ]
   
   # 支持手动运行
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       
