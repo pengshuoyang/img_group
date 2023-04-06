@@ -33,7 +33,7 @@ defaults:
 
 jobs:
   # build job for hugo
-  build:
+  build and deploy:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.108.0
@@ -63,12 +63,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
-
-  # deploy job for rsync
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      
       - name: rsync deploy
         uses: burnett01/rsync-deployments@5.1
         with: 
@@ -78,3 +73,18 @@ jobs:
           remote_path: /var/www/imedicalgenomics.com
           remote_user: root
           remote_key: ${{ secrets.REMOTE_KEY }}
+
+  # deploy job for rsync
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: rsync deploy
+  #       uses: burnett01/rsync-deployments@5.1
+  #       with: 
+  #         switches: -avzr --delete
+  #         path: ./public/
+  #         remote_host: imedicalgenomics.com
+  #         remote_path: /var/www/imedicalgenomics.com
+  #         remote_user: root
+  #         remote_key: ${{ secrets.REMOTE_KEY }}
