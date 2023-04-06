@@ -58,8 +58,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: ./public/
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_port: ${{ secrets.REMOTE_PORT }}
-          remote_path: ${{ secrets.REMOTE_PATH }}
-          remote_user: ${{ secrets.REMOTE_USER }}
+          remote_host: imedicalgenomics.com
+          remote_path: /var/www/imedicalgenomics.com
+          remote_user: root
           remote_key: ${{ secrets.REMOTE_KEY }}
